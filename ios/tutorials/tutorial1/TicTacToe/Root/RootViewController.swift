@@ -45,6 +45,7 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     // MARK: - RootViewControllable
 
     func present(viewController: ViewControllable) {
-        present(viewController.uiviewController, animated: true, completion: nil)
+        viewController.uiviewController.modalPresentationStyle = .fullScreen
+        present(viewController.uiviewController, animated: false, completion: nil)
     }
 }
